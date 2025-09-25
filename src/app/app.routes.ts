@@ -7,6 +7,12 @@ import { CalculadoraTemperaturaComponent } from './components/calculadora-temper
 import { ListaTarefasComponent } from './components/lista-tarefas/lista-tarefas.component';
 import { ListaAlunosComponent } from './components/lista-alunos/lista-alunos.component';
 import { CadastroAlunoComponent } from './components/cadastro-aluno/cadastro-aluno.component';
+import { ListaTurmasComponent } from './components/lista-turmas/lista-turmas.component';
+import { CadastroTurmasComponent } from './components/cadastro-turmas/cadastro-turmas.component';
+import { ListaMateriasComponent } from './components/lista-materias/lista-materias.component';
+import { CadastroMateriaComponent } from './components/cadastro-materia/cadastro-materia.component';
+import { ListaProfessoresComponent } from './components/lista-professores/lista-professores.component';
+import { CadastroProfessorComponent } from './components/cadastro-professor/cadastro-professor.component';
 
 export const routes: Routes = [
     { path: "calculadora", component: CalculadoraComponent },
@@ -16,6 +22,12 @@ export const routes: Routes = [
     { path: "calculadora-temperatura", component: CalculadoraTemperaturaComponent },
     { path: "lista-tarefas", component: ListaTarefasComponent },
     { path: "alunos", component: ListaAlunosComponent },
-    { path: "alunos/cadastro", component: CadastroAlunoComponent}
+    { path: "alunos/cadastro", component: CadastroAlunoComponent },
+    { path: "turmas", component: ListaTurmasComponent },
+    { path: "turmas/cadastro", component: CadastroTurmasComponent },
+    { path: "materias", component: ListaMateriasComponent },
+    { path: "materias/cadastro", component: CadastroMateriaComponent },
+    { path: "professores", component: ListaProfessoresComponent },
+    { path: "professores/cadastro", component: CadastroProfessorComponent }
 ];
 // SPA: Single Page Application
