@@ -23,6 +23,7 @@ export const routes: Routes = [
     { path: "lista-tarefas", component: ListaTarefasComponent },
     { path: "alunos", component: ListaAlunosComponent },
     { path: "alunos/cadastro", component: CadastroAlunoComponent },
+    { path: "alunos/editar/:id", component: CadastroAlunoComponent },
     { path: "turmas", component: ListaTurmasComponent },
     { path: "turmas/cadastro", component: CadastroTurmasComponent },
     { path: "materias", component: ListaMateriasComponent },

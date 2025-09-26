@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Router, RouterLink } from '@angular/router';
 
 interface Aluno {
   id: string;
@@ -23,7 +23,7 @@ export class ListaAlunosComponent {
   // Propriedades
   alunos: Aluno[];
 
-  constructor() {
+  constructor(private router: Router) {
     this.alunos = this.carregarAlunosLocalStorage();
   };
   
@@ -36,6 +36,10 @@ export class ListaAlunosComponent {
 
     let alunos: Aluno[] = JSON.parse(alunosDoLocalStorage);
     return alunos;
+  }
+
+  editar(aluno: Aluno): void {
+    this.router.navigate([`/alunos/editar/${aluno.id}`])
   }
 
   apagar(aluno: Aluno): void {

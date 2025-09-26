@@ -52,4 +52,26 @@ export class ListaProfessoresComponent {
 
     this.salvarProfessorLocalStorage();
   };
+
+  gerarGeracaoProfessor(nascimento: Date): string {
+
+    let ano = new Date(nascimento).getFullYear();
+
+    let geracao: string = "";
+
+    if (ano >= 1946 && ano <= 1964) {
+      geracao = "Baby Boomer"
+    } else if (ano >= 1965 && ano <= 1980) {
+      geracao = "Geração X"
+    } else if (ano >= 1981 && ano <= 1996) {
+      geracao = "Millenial"
+    } else if (ano >= 1997 && ano <= 2012) {
+      geracao = "Geração Z"
+    } else {
+      geracao = "Geração Alfa"
+    }
+
+    return geracao;
+  }
 }
+

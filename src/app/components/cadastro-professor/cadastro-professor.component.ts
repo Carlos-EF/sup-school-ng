@@ -81,22 +81,4 @@ export class CadastroProfessorComponent {
     let professores: Professor[] = JSON.parse(professoresLocalStorage);
     return professores;
   };
-
-  gerarGeracaoProfessor(geracao: string): string {
-    let anoNascimentoProfessor = this.dataNascimento!.getFullYear();
-
-    if (anoNascimentoProfessor >= 1946 && anoNascimentoProfessor <= 1964) {
-      this.geracao = "Baby Boomer"
-    } else if (anoNascimentoProfessor >= 1965 && anoNascimentoProfessor <= 1980) {
-      this.geracao = "Geração X"
-    } else if (anoNascimentoProfessor >= 1981 && anoNascimentoProfessor <= 1996) {
-      this.geracao = "Millenial"
-    } else if (anoNascimentoProfessor >= 1997 && anoNascimentoProfessor <= 2012) {
-      this.geracao = "Geração Z"
-    } else {
-      this.geracao = "Geração Alfa"
-    }
-
-    return geracao;
-  }
 }
