@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Materia {
   id: string,
@@ -19,11 +19,42 @@ export class CadastroMateriaComponent {
 
   materia: string = "";
 
-  constructor(private router: Router) {
+  idEditarMateria? : string;
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+  ) {
     this.materias = this.carregarMateriasLocalStorage();
+
+    let idParaEditarMateria = this.activatedRoute.snapshot.paramMap.get("id");
+
+    if (idParaEditarMateria !== null) {
+      this.idEditarMateria = idParaEditarMateria.toString();
+
+      this.preencherCamposParaEditarMateria();
+    }
   }
 
-  cadastrar(): void {
+  preencherCamposParaEditarMateria(): void {
+    let materia = this.materias.filter(materia => materia.id === this.idEditarMateria)[0];
+
+    this.materia = materia.nome;
+  };
+
+  salvarMateria(): void {
+    if (this.idEditarMateria === undefined) {
+      this.cadastrarMateria();
+    } else {
+      this.editarMateria();
+    }
+
+    this.salvarMateriaLocalStorage();
+
+    this.router.navigate(["/materias"])
+  }
+
+  cadastrarMateria(): void {
     if (this.materia === "") {
       alert("Por favor preencha o nome da matéria.");
     } else {
@@ -33,14 +64,16 @@ export class CadastroMateriaComponent {
       }
 
       this.materias.push(materia);
-
-      this.salvarTurmaLocalStorage();
-
-      this.router.navigate(["/materias"]);
     }
   }
 
-  salvarTurmaLocalStorage(): void {
+  editarMateria(): void {
+    let indiceListaMateria = this.materias.findIndex(materia => materia.id === this.idEditarMateria);
+
+    this.materias[indiceListaMateria].nome = this.materia;
+  }
+
+  salvarMateriaLocalStorage(): void {
     let materiasString = JSON.stringify(this.materias);
 
     localStorage.setItem("materias", materiasString);
