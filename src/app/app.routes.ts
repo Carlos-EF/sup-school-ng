@@ -31,6 +31,7 @@ export const routes: Routes = [
     { path: "materias/cadastro", component: CadastroMateriaComponent },
     { path: "materias/editar/:id", component: CadastroMateriaComponent },
     { path: "professores", component: ListaProfessoresComponent },
-    { path: "professores/cadastro", component: CadastroProfessorComponent }
+    { path: "professores/cadastro", component: CadastroProfessorComponent },
+    { path: "professores/editar/:id", component: CadastroProfessorComponent }
 ];
 // SPA: Single Page Application
