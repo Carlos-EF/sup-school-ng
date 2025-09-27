@@ -16,6 +16,7 @@
             <td>{{turma.nome.toUpperCase()}}</td>
             <td>{{turma.sigla}}</td>
             <td>
+                <button (click)="editarTurma(turma)">Editar</button>
                 <button class="botao-apagar" (click)="apagarTurma(turma)">Apagar</button>
             </td>
         </tr>

@@ -26,6 +26,7 @@ export const routes: Routes = [
     { path: "alunos/editar/:id", component: CadastroAlunoComponent },
     { path: "turmas", component: ListaTurmasComponent },
     { path: "turmas/cadastro", component: CadastroTurmasComponent },
+    { path: "turmas/editar/:id", component: CadastroTurmasComponent },
     { path: "materias", component: ListaMateriasComponent },
     { path: "materias/cadastro", component: CadastroMateriaComponent },
     { path: "professores", component: ListaProfessoresComponent },

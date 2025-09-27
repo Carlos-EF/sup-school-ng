@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 interface Turma {
   id: string,
@@ -22,11 +22,44 @@ export class CadastroTurmasComponent {
 
   sigla: string = "";
 
-  constructor(private router: Router) {
+  idEditarTurma?: string;
+
+  constructor(
+    private router: Router,
+    private activatedRoute: ActivatedRoute,
+  ) {
     this.turmas = this.carregarTurmasLocalStorage();
+    let idParaEditarTurma = this.activatedRoute.snapshot.paramMap.get("id");
+
+    if (idParaEditarTurma !== null) {
+      this.idEditarTurma = idParaEditarTurma.toString();
+
+      this.preencherCamposParaEditar();
+    }
   };
 
+  preencherCamposParaEditar(): void {
+    let turma = this.turmas.filter(turma => turma.id === this.idEditarTurma)[0];
+
+    this.nome = turma.nome;
+
+    this.sigla = turma.sigla;
+  }
+
   salvarTurma(): void {
+    if (this.idEditarTurma === undefined) {
+      this.cadastrarTurma();
+    } else {
+      this.editarTurma();
+    }
+
+    this.salvarTurmaLocalStorage();
+
+    this.router.navigate(["/turmas"]);
+  };
+
+
+  cadastrarTurma(): void {
     if (this.nome === "" && this.sigla === "") {
       alert("Por favor preencha os campos necessários.");
     } else if (this.sigla === "") {
@@ -41,12 +74,16 @@ export class CadastroTurmasComponent {
       };
 
       this.turmas.push(turma);
+    }
+  }
 
-      this.salvarTurmaLocalStorage();
+  editarTurma(): void {
+    let indiceListaTurma = this.turmas.findIndex(turma => turma.id === this.idEditarTurma);
 
-      this.router.navigate(["/turmas"]);
-    };
-  };
+    this.turmas[indiceListaTurma].nome = this.nome;
+
+    this.turmas[indiceListaTurma].sigla = this.sigla
+  }
 
   salvarTurmaLocalStorage(): void {
     let turmaString = JSON.stringify(this.turmas);
