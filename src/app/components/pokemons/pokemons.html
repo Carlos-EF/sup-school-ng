@@ -1,0 +1,320 @@
+<div style="margin: 10px; ">
+    <label for="pesquisa" style="margin-right: 5px;">Pesquisa</label>
+    <input type="text" [(ngModel)]="pesquisa" (keyup)="filtrar()" autofocus>
+</div>
+
+<div class="pokemons">
+    @for(pokemon of pokemonsApresentar; track pokemon){
+        <card 
+            [imagem]="pokemon.imagem"
+            [numero]="pokemon.numero"
+            [nome]="pokemon.nome" 
+            [tipo]="pokemon.tipo"></card>
+    }
+
+    <!-- <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/001.png" [numero]="1"
+        nome="bulbasaur" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/002.png" [numero]="2"
+        nome="ivysaur" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/003.png" [numero]="3"
+        nome="venusaur" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/004.png" [numero]="4"
+        nome="charmander" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/005.png" [numero]="5"
+        nome="charmeleon" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/006.png" [numero]="6"
+        nome="charizard" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/007.png" [numero]="7"
+        nome="squirtle" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/008.png" [numero]="8"
+        nome="wartortle" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/009.png" [numero]="9"
+        nome="blastoise" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/010.png" [numero]="10"
+        nome="caterpie" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/011.png" [numero]="11"
+        nome="metapod" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/012.png" [numero]="12"
+        nome="butterfree" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/013.png" [numero]="13"
+        nome="weedle" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/014.png" [numero]="14"
+        nome="kakuna" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/015.png" [numero]="15"
+        nome="beedrill" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/016.png" [numero]="16"
+        nome="pidgey" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/017.png" [numero]="17"
+        nome="pidgeotto" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/018.png" [numero]="18"
+        nome="pidgeot" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/019.png" [numero]="19"
+        nome="rattata" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/020.png" [numero]="20"
+        nome="raticate" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/021.png" [numero]="21"
+        nome="spearow" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/022.png" [numero]="22"
+        nome="fearow" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/023.png" [numero]="23"
+        nome="ekans" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/024.png" [numero]="24"
+        nome="arbok" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/025.png" [numero]="25"
+        nome="pikachu" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/026.png" [numero]="26"
+        nome="raichu" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/027.png" [numero]="27"
+        nome="sandshrew" tipo="Terrestre"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/028.png" [numero]="28"
+        nome="sandslash" tipo="Terrestre"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/029.png" [numero]="29"
+        nome="nidoran♀" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/030.png" [numero]="30"
+        nome="nidorina" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/031.png" [numero]="31"
+        nome="nidoqueen" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/032.png" [numero]="32"
+        nome="nidoran♂" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/033.png" [numero]="33"
+        nome="nidorino" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/034.png" [numero]="34"
+        nome="nidoking" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/035.png" [numero]="35"
+        nome="clefairy" tipo="Fada"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/036.png" [numero]="36"
+        nome="clefable" tipo="Fada"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/037.png" [numero]="37"
+        nome="vulpix" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/038.png" [numero]="38"
+        nome="ninetales" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/039.png" [numero]="39"
+        nome="jigglypuff" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/040.png" [numero]="40"
+        nome="wigglytuff" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/041.png" [numero]="41"
+        nome="zubat" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/042.png" [numero]="42"
+        nome="golbat" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/043.png" [numero]="43"
+        nome="oddish" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/044.png" [numero]="44"
+        nome="gloom" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/045.png" [numero]="45"
+        nome="vileplume" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/046.png" [numero]="46"
+        nome="paras" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/047.png" [numero]="47"
+        nome="parasect" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/048.png" [numero]="48"
+        nome="venonat" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/049.png" [numero]="49"
+        nome="venomoth" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/050.png" [numero]="50"
+        nome="diglett" tipo="Terrestre"></card>
+
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/051.png" [numero]="51"
+        nome="dugtrio" tipo="Terrestre"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/052.png" [numero]="52"
+        nome="meowth" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/053.png" [numero]="53"
+        nome="persian" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/054.png" [numero]="54"
+        nome="psyduck" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/055.png" [numero]="55"
+        nome="golduck" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/056.png" [numero]="56"
+        nome="mankey" tipo="Lutador"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/057.png" [numero]="57"
+        nome="primeape" tipo="Lutador"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/058.png" [numero]="58"
+        nome="growlithe" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/059.png" [numero]="59"
+        nome="arcanine" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/060.png" [numero]="60"
+        nome="poliwag" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/061.png" [numero]="61"
+        nome="poliwhirl" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/062.png" [numero]="62"
+        nome="poliwrath" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/063.png" [numero]="63"
+        nome="abra" tipo="Psíquico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/064.png" [numero]="64"
+        nome="kadabra" tipo="Psíquico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/065.png" [numero]="65"
+        nome="alakazam" tipo="Psíquico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/066.png" [numero]="66"
+        nome="machop" tipo="Lutador"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/067.png" [numero]="67"
+        nome="machoke" tipo="Lutador"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/068.png" [numero]="68"
+        nome="machamp" tipo="Lutador"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/069.png" [numero]="69"
+        nome="bellsprout" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/070.png" [numero]="70"
+        nome="weepinbell" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/071.png" [numero]="71"
+        nome="victreebel" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/072.png" [numero]="72"
+        nome="tentacool" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/073.png" [numero]="73"
+        nome="tentacruel" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/074.png" [numero]="74"
+        nome="geodude" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/075.png" [numero]="75"
+        nome="graveler" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/076.png" [numero]="76"
+        nome="golem" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/077.png" [numero]="77"
+        nome="ponyta" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/078.png" [numero]="78"
+        nome="rapidash" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/079.png" [numero]="79"
+        nome="slowpoke" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/080.png" [numero]="80"
+        nome="slowbro" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/081.png" [numero]="81"
+        nome="magnemite" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/082.png" [numero]="82"
+        nome="magneton" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/083.png" [numero]="83"
+        nome="farfetch’d" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/084.png" [numero]="84"
+        nome="doduo" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/085.png" [numero]="85"
+        nome="dodrio" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/086.png" [numero]="86"
+        nome="seel" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/087.png" [numero]="87"
+        nome="dewgong" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/088.png" [numero]="88"
+        nome="grimer" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/089.png" [numero]="89"
+        nome="muk" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/090.png" [numero]="90"
+        nome="shellder" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/091.png" [numero]="91"
+        nome="cloyster" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/092.png" [numero]="92"
+        nome="gastly" tipo="Fantasma"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/093.png" [numero]="93"
+        nome="haunter" tipo="Fantasma"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/094.png" [numero]="94"
+        nome="gengar" tipo="Fantasma"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/095.png" [numero]="95"
+        nome="onix" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/096.png" [numero]="96"
+        nome="drowzee" tipo="Psíquico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/097.png" [numero]="97"
+        nome="hypno" tipo="Psíquico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/098.png" [numero]="98"
+        nome="krabby" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/099.png" [numero]="99"
+        nome="kingler" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/100.png" [numero]="100"
+        nome="voltorb" tipo="Elétrico"></card>
+
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/101.png" [numero]="101"
+        nome="electrode" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/102.png" [numero]="102"
+        nome="exeggcute" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/103.png" [numero]="103"
+        nome="exeggutor" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/104.png" [numero]="104"
+        nome="cubone" tipo="Terrestre"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/105.png" [numero]="105"
+        nome="marowak" tipo="Terrestre"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/106.png" [numero]="106"
+        nome="hitmonlee" tipo="Lutador"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/107.png" [numero]="107"
+        nome="hitmonchan" tipo="Lutador"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/108.png" [numero]="108"
+        nome="lickitung" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/109.png" [numero]="109"
+        nome="koffing" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/110.png" [numero]="110"
+        nome="weezing" tipo="Venenoso"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/111.png" [numero]="111"
+        nome="rhyhorn" tipo="Terrestre"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/112.png" [numero]="112"
+        nome="rhydon" tipo="Terrestre"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/113.png" [numero]="113"
+        nome="chansey" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/114.png" [numero]="114"
+        nome="tangela" tipo="Planta"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/115.png" [numero]="115"
+        nome="kangaskhan" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/116.png" [numero]="116"
+        nome="horsea" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/117.png" [numero]="117"
+        nome="seadra" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/118.png" [numero]="118"
+        nome="goldeen" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/119.png" [numero]="119"
+        nome="seaking" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/120.png" [numero]="120"
+        nome="staryu" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/121.png" [numero]="121"
+        nome="starmie" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/122.png" [numero]="122"
+        nome="mr. mime" tipo="Psíquico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/123.png" [numero]="123"
+        nome="scyther" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/124.png" [numero]="124"
+        nome="jynx" tipo="Gelo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/125.png" [numero]="125"
+        nome="electabuzz" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/126.png" [numero]="126"
+        nome="magmar" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/127.png" [numero]="127"
+        nome="pinsir" tipo="Inseto"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/128.png" [numero]="128"
+        nome="tauros" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/129.png" [numero]="129"
+        nome="magikarp" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/130.png" [numero]="130"
+        nome="gyarados" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/131.png" [numero]="131"
+        nome="lapras" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/132.png" [numero]="132"
+        nome="ditto" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/133.png" [numero]="133"
+        nome="eevee" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/134.png" [numero]="134"
+        nome="vaporeon" tipo="Água"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/135.png" [numero]="135"
+        nome="jolteon" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/136.png" [numero]="136"
+        nome="flareon" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/137.png" [numero]="137"
+        nome="porygon" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/138.png" [numero]="138"
+        nome="omanyte" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/139.png" [numero]="139"
+        nome="omastar" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/140.png" [numero]="140"
+        nome="kabuto" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/141.png" [numero]="141"
+        nome="kabutops" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/142.png" [numero]="142"
+        nome="aerodactyl" tipo="Pedra"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/143.png" [numero]="143"
+        nome="snorlax" tipo="Normal"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/144.png" [numero]="144"
+        nome="articuno" tipo="Gelo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/145.png" [numero]="145"
+        nome="zapdos" tipo="Elétrico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/146.png" [numero]="146"
+        nome="moltres" tipo="Fogo"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/147.png" [numero]="147"
+        nome="dratini" tipo="Dragão"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/148.png" [numero]="148"
+        nome="dragonair" tipo="Dragão"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/149.png" [numero]="149"
+        nome="dragonite" tipo="Dragão"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/150.png" [numero]="150"
+        nome="mewtwo" tipo="Psíquico"></card>
+    <card imagem="https://www.pokemon.com/static-assets/content-assets/cms2/img/pokedex/full/151.png" [numero]="151"
+        nome="mew" tipo="Psíquico"></card> -->
+
+</div>

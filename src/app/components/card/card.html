@@ -1,0 +1,11 @@
+<a href="{{imagem}}">
+    <img [src]="imagem">
+</a>
+<div class="detalhe">
+    
+    <a class="pokemon-link" href="https://www.pokemon.com/br/pokedex/{{numero}}">
+        <span class="numero">Nº {{numero.toString().padStart(4, "0")}}</span>
+    </a>
+    <h5>{{nome}}</h5>
+    <button class="tipo {{onlyPlainChars(tipo)}}">{{tipo}}</button>
+</div>
