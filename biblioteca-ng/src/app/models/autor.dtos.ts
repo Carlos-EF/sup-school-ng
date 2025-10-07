@@ -2,5 +2,11 @@ export interface AutorResponse {
     id: number;
     nome: string;
     nacionalidade: string;
-    dataNascimento: Date;
+    dataNascimento: string;
 };
+
+export interface AutorCadastroRequest {
+    nome: string;
+    nacionalidade: string;
+    dataNascimento: string;
+}

@@ -1,3 +1,5 @@
+<p-button label="Cadastrar" severity="info" icon="pi pi-plus" routerLink="cadastrar" />
+
 <p-table [value]="autores" [tableStyle]="{ 'min-width': '50rem' }">
     <ng-template #header>
         <tr>
@@ -13,7 +15,7 @@
             <td>{{ autor.id }}</td>
             <td>{{ autor.nome }}</td>
             <td>{{ autor.nacionalidade }}</td>
-            <td>{{ autor.dataNascimento }}</td>
+            <td>{{ autor.dataNascimento | date: 'dd/MM/yyyy' }}</td>
             <td class="flex gap-2">
                 <!-- Depois será adicionado os botões -->
             </td>

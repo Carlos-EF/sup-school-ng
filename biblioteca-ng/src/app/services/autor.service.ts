@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AutorResponse } from '../models/autor.dtos';
+import { AutorCadastroRequest, AutorResponse } from '../models/autor.dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +13,9 @@ export class AutorService {
 
   getAll(): Observable<AutorResponse[]> {
     return this.httpClient.get<AutorResponse[]>(this.url);
+  };
+
+  create(form: AutorCadastroRequest): Observable<void> {
+    return this.httpClient.post<void>(this.url, form);
   }
 }
