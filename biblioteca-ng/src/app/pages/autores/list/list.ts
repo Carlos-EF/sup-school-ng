@@ -30,4 +30,14 @@ export class AutorList {
       }
     });
   }
+
+  apagar(id: number) {
+    this.autorService.delete(id).subscribe ({
+      next: sucesso => this.carregarAutores(),
+      error: erro => {
+        alert("Não foi possível apagar o autor.");
+        console.error("Ocorreu um erro ao apagar o autor: " + erro);
+      }
+    })
+  }
 }

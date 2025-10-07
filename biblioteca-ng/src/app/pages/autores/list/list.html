@@ -17,7 +17,7 @@
             <td>{{ autor.nacionalidade }}</td>
             <td>{{ autor.dataNascimento | date: 'dd/MM/yyyy' }}</td>
             <td class="flex gap-2">
-                <!-- Depois será adicionado os botões -->
+            <p-button (click)="apagar(autor.id)" label="Apagar" icon="pi pi-trash" outlined severity="danger" />
             </td>
         </tr>
     </ng-template>

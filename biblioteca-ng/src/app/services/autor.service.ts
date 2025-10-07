@@ -18,4 +18,10 @@ export class AutorService {
   create(form: AutorCadastroRequest): Observable<void> {
     return this.httpClient.post<void>(this.url, form);
   }
+
+  delete(id: number) {
+    const urlApagar = `${this.url}/${id}`;
+
+    return this.httpClient.delete<void>(urlApagar);
+  }
 }
