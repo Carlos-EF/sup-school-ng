@@ -15,9 +15,15 @@ export class AlunoService {
 
   getAll(): Observable<AlunoResponse[]> {
     return this.httpClient.get<AlunoResponse[]>(this.url);
-  }
+  };
 
   create(form: AlunoCadastroRequest): Observable<void> {
     return this.httpClient.post<void>(this.url, form);
-  }
+  };
+
+  delete(id: number): Observable<void> {
+    const urlParaApagar = `${this.url}/${id}`;
+
+    return this.httpClient.delete<void>(urlParaApagar);
+  };
 }
