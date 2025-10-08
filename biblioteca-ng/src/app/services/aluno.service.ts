@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AlunoCadastroRequest, AlunoResponse } from '../models/aluno.dtos';
+import { AlunoCadastroRequest, AlunoEditarRequest, AlunoResponse } from '../models/aluno.dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -26,4 +26,16 @@ export class AlunoService {
 
     return this.httpClient.delete<void>(urlParaApagar);
   };
+
+  getById(id: number): Observable<AlunoResponse> {
+    const urlComId = `${this.url}/${id}`
+
+    return this.httpClient.get<AlunoResponse>(urlComId);
+  }
+
+  update(id: number, form: AlunoEditarRequest): Observable<void> {
+    const urlParaEditar = `${this.url}/${id}`
+
+    return this.httpClient.put<void>(urlParaEditar, form);
+  }
 }

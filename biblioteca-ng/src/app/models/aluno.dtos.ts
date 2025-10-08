@@ -12,3 +12,10 @@ export interface AlunoCadastroRequest {
     dataNascimento: string;
     cpf: string;
 }
+
+export interface AlunoEditarRequest {
+    nome: string;
+    sobrenome: string;
+    dataNascimento: string;
+    cpf: string;
+}

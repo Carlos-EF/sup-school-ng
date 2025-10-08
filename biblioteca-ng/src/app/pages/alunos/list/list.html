@@ -19,6 +19,7 @@
             <td>{{ aluno.cpf }}</td>
             <td>{{ aluno.dataNascimento | date: "dd/MM/yyyy"}}</td>
             <td>
+                <p-button label="Editar" icon="pi pi-pencil" severity="warn" routerLink="/alunos/editar/{{aluno.id}}" />
                 <p-button label="Apagar" (click)="apagarAluno(aluno.id)" icon="pi pi-trash" outlined severity="danger"/>
             </td>
         </tr>
