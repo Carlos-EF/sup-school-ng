@@ -5,6 +5,7 @@ import { CategoriaEdit } from './pages/categorias/edit/edit';
 import { AutorList } from './pages/autores/list/list';
 import { AutorCreate } from './pages/autores/create/create';
 import { AutorEdit } from './pages/autores/edit/edit';
+import { AlunoList } from './pages/alunos/list/list';
 
 export const routes: Routes = [
     { path: "categorias", component: CategoriaList },
@@ -13,5 +14,6 @@ export const routes: Routes = [
     { path: "autores", component: AutorList },
     { path: "autores/cadastrar", component: AutorCreate },
     { path: "autores/editar/:id", component: AutorEdit },
+    { path: "alunos", component: AlunoList},
 
 ];

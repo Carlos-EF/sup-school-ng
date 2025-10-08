@@ -31,7 +31,7 @@ export class Navbar {
           {
             label: 'Categorias',
             icon: 'pi pi-list',
-            routerLink: "categorias"
+            routerLink: 'categorias'
           },
           {
             label: 'Livros',
@@ -43,6 +43,17 @@ export class Navbar {
           },
         ]
       },
+      {
+        label: 'Escola',
+        icon: 'pi pi-pencil',
+        items: [
+          {
+            label: 'Alunos',
+            icon: 'pi pi-graduation-cap',
+            routerLink: 'alunos'
+          },
+        ]
+      }
     ]
   }
 }
