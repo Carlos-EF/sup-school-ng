@@ -3,10 +3,13 @@ import { AlunoResponse } from '../../../models/aluno.dtos';
 import { TableModule } from 'primeng/table';
 import { CommonModule } from '@angular/common';
 import { AlunoService } from '../../../services/aluno.service';
+import { RouterLink } from '@angular/router';
+import { ButtonModule } from 'primeng/button';
+
 
 @Component({
   selector: 'app-list',
-  imports: [TableModule, CommonModule,],
+  imports: [TableModule, CommonModule, RouterLink, ButtonModule],
   templateUrl: './list.html',
   styleUrl: './list.scss'
 })

@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { AlunoResponse } from '../models/aluno.dtos';
+import { AlunoCadastroRequest, AlunoResponse } from '../models/aluno.dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -15,5 +15,9 @@ export class AlunoService {
 
   getAll(): Observable<AlunoResponse[]> {
     return this.httpClient.get<AlunoResponse[]>(this.url);
+  }
+
+  create(form: AlunoCadastroRequest): Observable<void> {
+    return this.httpClient.post<void>(this.url, form);
   }
 }

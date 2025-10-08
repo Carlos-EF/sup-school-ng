@@ -5,3 +5,10 @@ export interface AlunoResponse {
     dataNascimento: string;
     cpf: string;
 }
+
+export interface AlunoCadastroRequest {
+    nome: string;
+    sobrenome: string;
+    dataNascimento: string;
+    cpf: string;
+}
