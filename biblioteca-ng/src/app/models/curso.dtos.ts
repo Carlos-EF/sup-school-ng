@@ -3,3 +3,8 @@ export interface CursoResponse {
     nome: string,
     sigla: string,
 }
+
+export interface CursoCadastroRequest {
+    nome: string,
+    sigla: string,
+}

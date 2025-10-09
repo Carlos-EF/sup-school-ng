@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CursoResponse } from '../models/curso.dtos';
+import { CursoCadastroRequest, CursoResponse } from '../models/curso.dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +16,10 @@ export class CursoService {
   }
 
   getAll(): Observable<CursoResponse[]> {
-  return  this.httpClient.get<CursoResponse[]>(this.url);
+    return this.httpClient.get<CursoResponse[]>(this.url);
+  };
+
+  create(form: CursoCadastroRequest): Observable<void> {
+    return this.httpClient.post<void>(this.url, form);
   }
 }

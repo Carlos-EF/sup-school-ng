@@ -3,10 +3,12 @@ import { FormsModule } from '@angular/forms';
 import { TableModule } from 'primeng/table';
 import { CursoService } from '../../../services/curso.service';
 import { CursoResponse } from '../../../models/curso.dtos';
+import { ButtonModule } from 'primeng/button';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-list',
-  imports: [FormsModule, TableModule],
+  imports: [FormsModule, TableModule, ButtonModule, RouterLink],
   templateUrl: './list.html',
   styleUrl: './list.scss'
 })
