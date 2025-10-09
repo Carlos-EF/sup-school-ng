@@ -15,7 +15,7 @@ import { RouterLink } from '@angular/router';
 
 export class CursoList {
   cursos: CursoResponse[] = []
-  
+
   constructor(
     private cursoService: CursoService
   ) { };
@@ -30,6 +30,16 @@ export class CursoList {
       error: erro => {
         alert("Não foi possível carregar os cursos");
         console.error("Ocorreu um erro ao carregar os cursos: " + erro);
+      }
+    })
+  }
+
+  apagar(id: number) {
+    this.cursoService.delete(id).subscribe({
+      next: sucesso => this.carregarCursos(),
+      error: erro => {
+        alert("Não foi possível apagar este curso");
+        console.error("Ocorreu um erro ao tentar apagar este curso" + erro);
       }
     })
   }

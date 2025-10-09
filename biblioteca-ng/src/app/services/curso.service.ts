@@ -22,4 +22,10 @@ export class CursoService {
   create(form: CursoCadastroRequest): Observable<void> {
     return this.httpClient.post<void>(this.url, form);
   }
+
+  delete(id: number): Observable<void> {
+    const urlParaApagar = `${this.url}/${id}`;
+    
+    return this.httpClient.delete<void>(urlParaApagar);
+  }
 }
