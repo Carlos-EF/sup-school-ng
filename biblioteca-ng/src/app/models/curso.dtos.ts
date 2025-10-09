@@ -8,3 +8,8 @@ export interface CursoCadastroRequest {
     nome: string,
     sigla: string,
 }
+
+export interface CursoEditarRequest {
+    nome: string,
+    sigla: string,
+}
