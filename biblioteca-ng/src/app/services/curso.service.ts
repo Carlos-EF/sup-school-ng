@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { HttpClient } from '@angular/common/http';
-import { CursoCadastroRequest, CursoResponse } from '../models/curso.dtos';
+import { CursoCadastroRequest, CursoEditarRequest, CursoResponse } from '../models/curso.dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -25,13 +25,19 @@ export class CursoService {
 
   delete(id: number): Observable<void> {
     const urlParaApagar = `${this.url}/${id}`;
-    
+
     return this.httpClient.delete<void>(urlParaApagar);
   }
 
   getById(id: number): Observable<CursoResponse> {
-    const urlComId = `${this.url}/${id}`
+    const urlComId = `${this.url}/${id}`;
 
     return this.httpClient.get<CursoResponse>(urlComId);
+  }
+
+  update(id: number, form: CursoEditarRequest): Observable<void> { 
+    const urlParaEditar = `${this.url}/${id}`;
+
+    return this.httpClient.put<void>(urlParaEditar, form);
   }
 }

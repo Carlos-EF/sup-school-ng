@@ -28,6 +28,29 @@ export class CursoEdit {
     }
 
     this.id = parseInt(this.activatedRoute.snapshot.paramMap.get("id")!.toString());
+
+    this.carregarCurso();
   }
-  salvar() { }
+
+  private carregarCurso() {
+    this.cursoService.getById(this.id).subscribe({
+      next: curso => {
+        this.form.nome = curso.nome
+        this.form.sigla = curso.sigla
+      },
+      error: erro => {
+        alert("Não foi possível carregar os dados do curso.");
+        console.error("Ocorreu um erro ao tentar carregar os dados do curso: " + erro)
+      }
+    })
+  }
+  salvar() {
+    this.cursoService.update(this.id, this.form).subscribe({
+      next: sucesso => this.router.navigate(["/cursos"]),
+      error: erro => {
+        alert("Não foi possível atualizar o curso.");
+        console.error("Ocorreu um erro ao tentar atualizar o curso: " + erro);
+      }
+    })
+   }
 }

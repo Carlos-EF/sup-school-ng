@@ -10,6 +10,7 @@ import { AlunoCreate } from './pages/alunos/create/create';
 import { AlunoEdit } from './pages/alunos/edit/edit';
 import { CursoList } from './pages/cursos/list/list';
 import { CursoCreate } from './pages/cursos/create/create';
+import { CursoEdit } from './pages/cursos/edit/edit';
 
 export const routes: Routes = [
     { path: "categorias", component: CategoriaList },
@@ -23,5 +24,6 @@ export const routes: Routes = [
     { path: "alunos/editar/:id", component: AlunoEdit },
     { path: "cursos", component: CursoList },
     { path: "cursos/cadastrar", component: CursoCreate },
+    { path: "cursos/editar/:id", component: CursoEdit },
 
 ];
