@@ -35,7 +35,8 @@ export class Navbar {
           },
           {
             label: 'Livros',
-            icon: 'pi pi-book'
+            icon: 'pi pi-book',
+            routerLink: 'livros'
           },
           {
             label: 'Usuários',

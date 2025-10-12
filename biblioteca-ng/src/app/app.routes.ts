@@ -11,6 +11,9 @@ import { AlunoEdit } from './pages/alunos/edit/edit';
 import { CursoList } from './pages/cursos/list/list';
 import { CursoCreate } from './pages/cursos/create/create';
 import { CursoEdit } from './pages/cursos/edit/edit';
+import { LivroCreate } from './pages/livros/create';
+import { LivroList } from './pages/livros/list';
+import { LivroEdit } from './pages/livros/edit';
 
 export const routes: Routes = [
     { path: "categorias", component: CategoriaList },
@@ -25,5 +28,7 @@ export const routes: Routes = [
     { path: "cursos", component: CursoList },
     { path: "cursos/cadastrar", component: CursoCreate },
     { path: "cursos/editar/:id", component: CursoEdit },
-
+    { path: "livros", component: LivroList },
+    { path: "livros/cadastrar", component: LivroCreate },
+    { path: "livros/editar/:id", component: LivroEdit },
 ];
