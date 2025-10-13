@@ -15,6 +15,7 @@ import { LivroCreate } from './pages/livros/create';
 import { LivroList } from './pages/livros/list';
 import { LivroEdit } from './pages/livros/edit';
 import { UsuarioList } from './pages/usuarios/list/list';
+import { UsuarioCreate } from './pages/usuarios/create/create';
 
 export const routes: Routes = [
     { path: "categorias", component: CategoriaList },
@@ -33,4 +34,5 @@ export const routes: Routes = [
     { path: "livros/cadastrar", component: LivroCreate },
     { path: "livros/editar/:id", component: LivroEdit },
     { path: "usuarios", component: UsuarioList },
+    { path: "usuarios/cadastrar", component: UsuarioCreate },
 ];

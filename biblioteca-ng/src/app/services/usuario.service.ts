@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UsuarioResponse } from '../models/usuario.dtos';
+import { UsuarioCadastrarRequest, UsuarioResponse } from '../models/usuario.dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -13,5 +13,9 @@ export class UsuarioService {
 
   getAll(): Observable<UsuarioResponse[]> {
     return this.httpClient.get<UsuarioResponse[]>(this.url);
+  }
+
+  create(form: UsuarioCadastrarRequest): Observable<void> {
+    return this.httpClient.post<void>(this.url, form);
   }
 }
