@@ -40,7 +40,8 @@ export class Navbar {
           },
           {
             label: 'Usuários',
-            icon: 'pi pi-user'
+            icon: 'pi pi-user',
+            routerLink: 'usuarios'
           },
         ]
       },

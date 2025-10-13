@@ -14,6 +14,7 @@ import { CursoEdit } from './pages/cursos/edit/edit';
 import { LivroCreate } from './pages/livros/create';
 import { LivroList } from './pages/livros/list';
 import { LivroEdit } from './pages/livros/edit';
+import { UsuarioList } from './pages/usuarios/list/list';
 
 export const routes: Routes = [
     { path: "categorias", component: CategoriaList },
@@ -31,4 +32,5 @@ export const routes: Routes = [
     { path: "livros", component: LivroList },
     { path: "livros/cadastrar", component: LivroCreate },
     { path: "livros/editar/:id", component: LivroEdit },
+    { path: "usuarios", component: UsuarioList },
 ];

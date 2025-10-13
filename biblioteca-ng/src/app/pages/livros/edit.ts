@@ -245,7 +245,7 @@ export class LivroEdit {
         this.form.titulo = livro.titulo;
         this.form.resumo = livro.resumo;
         this.form.descricao = livro.descricao;
-        this.form.anoPublicacao = new Date(livro.anoPublicacao!);
+        this.form.anoPublicacao = livro.anoPublicacao;
         this.form.autorId = livro.autorId;
         this.form.categoriaId = livro.categoriaId;
         this.form.isbn = livro.isbn;

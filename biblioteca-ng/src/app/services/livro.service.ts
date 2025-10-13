@@ -42,11 +42,6 @@ export class LivroService {
   update(id: number, form: LivroEditarRequest): Observable<void> {
     const urlAtualizar = `${this.url}/${id}`;
 
-    let formulario = {
-      ...form,
-      anoPublicacao: form.anoPublicacao!.getFullYear()
-    }
-
-    return this.httpClient.put<void>(urlAtualizar, formulario);
+    return this.httpClient.put<void>(urlAtualizar, form);
   }
 }
