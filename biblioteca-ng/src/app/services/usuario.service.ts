@@ -30,4 +30,10 @@ export class UsuarioService {
 
     return this.httpClient.put<void>(urlParaEditar, form);
   }
+
+  delete(id:number): Observable<void> {
+    const urlParaEditar = `${this.url}/${id}`;
+
+    return this.httpClient.delete<void>(urlParaEditar);
+  }
 }

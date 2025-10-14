@@ -36,5 +36,13 @@ export class UsuarioList {
     })
   }
 
-  apagar(id: number) { }
+  apagar(id: number) { 
+    this.usuarioService.delete(id).subscribe({
+      next: sucesso => this.carregarUsuarios(),
+      error: erro => {
+        alert("Não foi possível apagar o usuário.");
+        console.error("Ocorreu um erro ao tentar apagar o usuário: " + erro);
+      }
+    })
+  }
 }
