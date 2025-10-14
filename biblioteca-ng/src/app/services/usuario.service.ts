@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { UsuarioCadastrarRequest, UsuarioResponse } from '../models/usuario.dtos';
+import { UsuarioCadastrarRequest, UsuarioEditarRequest, UsuarioResponse } from '../models/usuario.dtos';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +17,17 @@ export class UsuarioService {
 
   create(form: UsuarioCadastrarRequest): Observable<void> {
     return this.httpClient.post<void>(this.url, form);
+  }
+
+  getById(id: number): Observable<UsuarioResponse> {
+    const urlComId = `${this.url}/${id}`;
+
+    return this.httpClient.get<UsuarioResponse>(urlComId);
+  }
+
+  update(id: number,form: UsuarioEditarRequest): Observable<void> {
+    const urlParaEditar = `${this.url}/${id}`;
+
+    return this.httpClient.put<void>(urlParaEditar, form);
   }
 }

@@ -11,3 +11,10 @@ export interface UsuarioCadastrarRequest {
     telefone: string;
     endereco: string;
 }
+
+export interface UsuarioEditarRequest {
+    nome: string;
+    email: string;
+    telefone: string;
+    endereco: string;
+}

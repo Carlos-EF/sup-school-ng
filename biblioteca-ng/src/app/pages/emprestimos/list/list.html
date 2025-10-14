@@ -17,8 +17,8 @@
         <tr>
             <td>{{ emprestimo.id }}</td>
             <td>{{ emprestimo.usuario.nome }}</td>
-            <td>{{ emprestimo.dataEmprestimo }}</td>
-            <td>{{ emprestimo.dataDevolucao  }}</td>
+            <td>{{ emprestimo.dataEmprestimo | date: 'dd/MM/yyyy'}}</td>
+            <td>{{ emprestimo.dataDevolucao     | date: 'dd/MM/yyyy'  }}</td>
             <td>{{ emprestimo.status  }}</td>
             <td>
                 <!-- <div class="gap-2">

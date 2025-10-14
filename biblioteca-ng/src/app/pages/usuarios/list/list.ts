@@ -35,4 +35,6 @@ export class UsuarioList {
       }
     })
   }
+
+  apagar(id: number) { }
 }
