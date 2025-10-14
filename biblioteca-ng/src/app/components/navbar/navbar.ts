@@ -43,6 +43,11 @@ export class Navbar {
             icon: 'pi pi-user',
             routerLink: 'usuarios'
           },
+          {
+            label: 'Empréstimo',
+            icon: 'pi pi-barcode',
+            routerLink: 'emprestimos'
+          },
         ]
       },
       {

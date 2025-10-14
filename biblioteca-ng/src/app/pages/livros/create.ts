@@ -174,6 +174,7 @@ export class LivroCreate {
   form: LivroCadastroRequest;
 
   autores: AutorResponse[] | undefined;
+  
   categorias: CategoriaResponse[] | undefined;
 
   constructor(
