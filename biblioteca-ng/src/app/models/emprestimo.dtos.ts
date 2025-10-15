@@ -15,3 +15,11 @@ export interface EmprestimoCadastrarRequest {
     dataDevolucao: Date | null;
     status: string;
 }
+
+export interface EmprestimoEditarRequest {
+    livroId: number | null;
+    usuarioId: number | null;
+    dataEmprestimo: Date | null;
+    dataDevolucao: Date | null;
+    status: string;
+}
