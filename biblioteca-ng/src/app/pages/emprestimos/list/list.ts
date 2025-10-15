@@ -37,4 +37,14 @@ export class EmprestimoList {
     }
   })
  }
+
+ apagar(id: number) {
+  this.emprestimosService.delete(id).subscribe({
+    next: successo => this.carregarEmprestimos(),
+    error: erro => {
+      alert("Ocorreu um erro ao tentar apagar o empréstimo.");
+      console.error("Ocorreu um erro ao tentar apagar o empréstimo: " + erro);
+    }
+  })
+ }
 }

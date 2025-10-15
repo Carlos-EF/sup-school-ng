@@ -30,4 +30,10 @@ export class EmprestimosService {
 
     return this.httpClient.put<void>(urlParaEditar, form);
   }
+
+  delete(id: number): Observable<void> {
+    const urlParaApagar = `${this.url}/${id}`;
+
+    return this.httpClient.delete<void>(urlParaApagar);
+  }
 }
