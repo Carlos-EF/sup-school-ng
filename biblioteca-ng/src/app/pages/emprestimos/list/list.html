@@ -1,4 +1,4 @@
-<div class="flex justify-content-end mr-2 mt-2">
+<div class="flex justify-content-end mr-2 mt-2 mb-2">
     <p-button label="Cadastrar" severity="info" icon="pi pi-plus" routerLink="cadastrar" />
 </div>
 
@@ -7,6 +7,7 @@
         <tr>
             <th>ID</th>
             <th>Usuário</th>
+            <th>Livro</th>
             <th>Data do Empréstimo</th>
             <th>Data de Devolução</th>
             <th>Status</th>
@@ -17,6 +18,7 @@
         <tr>
             <td>{{ emprestimo.id }}</td>
             <td>{{ emprestimo.usuario.nome }}</td>
+            <td>{{ emprestimo.livro.titulo }}</td>
             <td>{{ emprestimo.dataEmprestimo | date: 'dd/MM/yyyy'}}</td>
             <td>{{ emprestimo.dataDevolucao     | date: 'dd/MM/yyyy'  }}</td>
             <td>{{ emprestimo.status  }}</td>
@@ -25,7 +27,7 @@
                     <p-button label="Editar" icon="pi pi-pencil" severity="warn"
                         routerLink="/emprestimos/editar/{{emprestimo.id}}" />
 
-                    <p-button label="Apagar" severity="danger" icon="pi pi-trash" (click)="apagar(emprestimo.id)" />
+                    <p-button class="ml-3" label="Apagar" severity="danger" icon="pi pi-trash" (click)="apagar(emprestimo.id)" />
                 </div>
             </td>
         </tr>
